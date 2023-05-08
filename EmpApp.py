@@ -18,7 +18,7 @@ db_conn = connections.Connection(
 
 )
 output = {}
-table = 'Leave'
+table = 'LeaveList'
 
 # Index
 @app.route("/", methods=['GET', 'POST'])
@@ -34,7 +34,7 @@ def about():
 @app.route("/ViewLeave", methods=['GET'])
 def viewLeave():
     cursor = db_conn.cursor() 
-    cursor.execute("SELECT * FROM `Leave`")
+    cursor.execute("SELECT * FROM LeaveList")
     leave = cursor.fetchall()
     cursor.close()
     print(leave)
