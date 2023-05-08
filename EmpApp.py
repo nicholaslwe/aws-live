@@ -23,7 +23,7 @@ table = 'Leave'
 # Index
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('addLeave.html')
+    return render_template('ViewLeave.html')
 
 # About Us
 @app.route("/about", methods=['POST'])
