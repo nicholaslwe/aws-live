@@ -34,11 +34,12 @@ def about():
 @app.route("/ViewLeave", methods=['GET'])
 def viewLeave():
     cursor = db_conn.cursor() 
-    cursor.execute("SELECT * FROM Leave")
+    cursor.execute("SELECT * FROM `Leave`")
     leave = cursor.fetchall()
     cursor.close()
     print(leave)
     return render_template('ViewLeave.html', leave = leave)
+
 
 @app.route("/addLeave", methods=['POST', 'GET'])
 def addLeave():
