@@ -77,7 +77,7 @@ def addLeave():
                 error_msg = "Leave with this ID already exists"
                 return render_template('addLeave.html', error_msg=error_msg, leaveId=leaveId, name=name, startDate=startDate, duration=duration, reason=reason)
 
-            insert_sql = "INSERT INTO Leave (leaveId, name, startDate, duration, reason) VALUES (%s, %s, %s, %s, %s)"
+            insert_sql = "INSERT INTO `Leave` (leaveId, name, startDate, duration, reason) VALUES (%s, %s, %s, %s, %s)"
             cursor.execute(insert_sql, (leaveId, name, startDate, duration, reason))
             db_conn.commit()
             
