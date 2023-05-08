@@ -111,7 +111,7 @@ def EditLeave(leaveId):
         if startDate == "":
             return "Please select a date!"
         
-        if duration < 0:
+        if int(duration) < 0:
             return "Please select at least 1 day!"
         
         if reason == "":
