@@ -88,21 +88,21 @@
     <body>
         <h1>Edit Leave</h1>
 
-        <form action="/editLeave/{{ Leave[0] }}" autocomplete="on" class="leaveForm" method="post">
+        <form action="/editLeave/{{ leave[0] }}" autocomplete="on" class="leaveForm" method="post">
             <label for="leaveId">Leave ID: </label>
-            <input type="number" id="leaveId" min="1001" name="leaveId" value="{{ Leave[0]}}" placeholder="etc: 1001" required><br><br>
+            <input type="number" id="leaveId" min="1001" name="leaveId" value="{{ leave[0]}}" placeholder="etc: 1001" required><br><br>
         
             <label for="name">Employee Name: </label>
-            <input type="text" id="name" value="{{ Leave[1]}}" name="name" placeholder="etc: Miller" required><br><br>
+            <input type="text" id="name" value="{{ leave[1]}}" name="name" placeholder="etc: Miller" required><br><br>
         
             <label for="startDate">Start Date: </label>
-            <input type="date" id="startDate" value="{{ Leave[2]}}" name="startDate" required><br><br>
+            <input type="date" id="startDate" value="{{ leave[2]}}" name="startDate" required><br><br>
         
             <label for="duration">Duration (Days): </label>
-            <input type="number" id="duration" value="{{ Leave[3]}}" name="duration" min="1" max="5" required><br><br>
+            <input type="number" id="duration" value="{{ leave[3]}}" name="duration" min="1" max="5" required><br><br>
         
             <label for="reason">Reason: </label>
-            <input type="text" id="reason" value="{{ Leave[4]}}" name="reason" placeholder="etc: bitten by dog" required><br><br>
+            <input type="text" id="reason" value="{{ leave[4]}}" name="reason" placeholder="etc: bitten by dog" required><br><br>
         
             <button type="submit">Update</button>
             <button type="submit"><a href="/ViewLeave">Back</a></button>
