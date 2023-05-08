@@ -47,10 +47,10 @@ def addLeave():
         return render_template('addLeave.html')
 
     if request.method == 'POST':
-        leaveId = int(request.form['leaveId'])
+        leaveId = request.form['leaveId']
         name = request.form['name']
         startDate = request.form['startDate']
-        duration = int(request.form['duration'])
+        duration = request.form['duration']
         reason = request.form['reason']
 
         insert_sql = "INSERT INTO Leave VALUES (%s, %s, %s, %s, %s)"
