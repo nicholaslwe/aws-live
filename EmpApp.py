@@ -71,7 +71,7 @@ def addLeave():
         try:
             # To check if emp_id already exists
             check_sql = "SELECT * FROM Leave WHERE leaveId = %s"
-            cursor.execute(check_sql, (leaveId,))
+            cursor.execute(check_sql, (leaveId))
             result = cursor.fetchone()
 
             if result:
