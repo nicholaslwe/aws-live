@@ -47,6 +47,7 @@ def addLeave():
         return render_template('addLeave.html')
 
     if request.method == 'POST':
+        leaveId = request.form['leaveId']
         name = request.form['name']
         startDate = request.form['startDate']
         duration = request.form['duration']
