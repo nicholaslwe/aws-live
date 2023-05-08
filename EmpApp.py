@@ -21,9 +21,9 @@ output = {}
 table = 'Leave'
 
 # Index
-@app.route("/editLeave/<int:leave_id>", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('editLeave.html', Leave=leave)
+    return render_template('editLeave.html')
 
 # About Us
 @app.route("/about", methods=['POST'])
