@@ -30,7 +30,7 @@ def home():
 def about():
     return render_template('www.intellipaat.com')
 
-
+# View Leave List
 @app.route("/ViewLeave", methods=['GET'])
 def viewLeave():
     cursor = db_conn.cursor() 
@@ -40,7 +40,7 @@ def viewLeave():
     print(leave)
     return render_template('ViewLeave.html', leave = leave)
 
-
+# Apply Leave
 @app.route("/addLeave", methods=['POST', 'GET'])
 def addLeave():
 
@@ -87,21 +87,22 @@ def addLeave():
         print("Leave Applied Successfully...")
         return render_template('addLeaveOutput.html', name=name)
 
+# Edit Leave
 @app.route("/editLeave/<string:leaveId>", methods=['POST', 'GET'])
 def EditLeave(leaveId):
     if request.method == 'GET':
         cursor = db_conn.cursor()
-        cursor.execute("SELECT * FROM Leave WHERE leaveId=%s", (leaveId,))
+        cursor.execute("SELECT * FROM LeaveList WHERE leaveId=%s", (leaveId))
         leave = cursor.fetchone()
         cursor.close()
 
-        # Pass payroll record to EditPayroll template
+        # Pass leaveList record to EditLeave template
         return render_template('editLeave.html', leave=leave)
 
     if request.method == 'POST':
         name = request.form['name']
         startDate = request.form['startDate']
-        duration = int(request.form['duration'])
+        duration = request.form['duration']
         reason = request.form['reason']
 
         if name == "":
@@ -110,13 +111,13 @@ def EditLeave(leaveId):
         if startDate == "":
             return "Please select a date!"
         
-        if int(duration) < 0:
+        if duration < 0:
             return "Please select at least 1 day!"
         
         if reason == "":
             return "Please provide a reason!"
 
-        update_sql = "UPDATE Leave SET name=%s, startDate=%s, duration=%s,reason=%s WHERE leaveId=%s"
+        update_sql = "UPDATE LeaveList SET name=%s, startDate=%s, duration=%s,reason=%s WHERE leaveId=%s"
         cursor = db_conn.cursor()
 
         cursor.execute(update_sql, (name, startDate, duration, reason, leaveId))
