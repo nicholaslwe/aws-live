@@ -84,8 +84,8 @@ def addLeave():
         finally:
             cursor.close()
         
-        print("Leave Applied Successfully...")
-        return redirect('addLeaveOutput.html', name=name)
+print("Leave Applied Successfully...")
+return redirect('addLeaveOutput.html', name=name)
 
 @app.route("/editLeave/<string:leaveId>", methods=['POST', 'GET'])
 def EditLeave(leaveId):
