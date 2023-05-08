@@ -100,15 +100,15 @@
             </tr>
         </thead>
 
-        {% for row in Leave %}
+        {% for leave in Leave %}
 		<tr>
-			<td>{{ row[0] }}</td>
-			<td>{{ row[1] }}</td>
-			<td>{{ row[2] }}</td>
-			<td>{{ row[3] }}</td>
-			<td>{{ row[4] }}</td>
+			<td>{{ leave[0] }}</td>
+			<td>{{ leave[1] }}</td>
+			<td>{{ leave[2] }}</td>
+			<td>{{ leave[3] }}</td>
+			<td>{{ leave[4] }}</td>
 			<td class="button-cell">
-				<a href="/editLeave/{{ Leave[0] }}"><button>Edit</button></a>
+				<a href="/editLeave/{{ leave[0] }}"><button>Edit</button></a>
 			</td>
 		</tr>
     	{% endfor %}
