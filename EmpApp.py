@@ -34,7 +34,7 @@ def about():
 @app.route("/ViewLeave", methods=['GET'])
 def viewLeave():
     cursor = db_conn.cursor() 
-    cursor.execute("SELECT * FROM `Leave`")
+    cursor.execute("SELECT * FROM Leave")
     leave = cursor.fetchall()
     cursor.close()
     print(leave)
