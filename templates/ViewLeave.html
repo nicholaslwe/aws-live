@@ -100,18 +100,18 @@
             </tr>
         </thead>
 
-        {% for Leave in Leave %}
-        <tr>
-            <td>{{ Leave[0] }}</td>
-            <td>{{ Leave[1] }}</td>
-            <td>{{ Leave[2] }}</td>
-            <td>{{ Leave[3] }}</td>
-            <td>{{ Leave[4] }}</td>
-            <td class="button-cell">
-                <a href="/editLeave/{{ Leave[0] }}"><button>Edit</button></a>
-            </td>
-        </tr>
-        {% endfor %}
+        {% for row in Leave %}
+      	<tr>
+		<td>{{ row[0] }}</td>
+		<td>{{ row[1] }}</td>
+		<td>{{ row[2] }}</td>
+		<td>{{ row[3] }}</td>
+		<td>{{ row[4] }}</td>
+		<td class="button-cell">
+			<a href="/editLeave/{{ Leave[0] }}"><button>Edit</button></a>
+		</td>
+      	</tr>
+    	{% endfor %}
     </table>
     <br><br>
     <a href="addLeave"><button id="applyLeave">Apply Leave</button></a>
