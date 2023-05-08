@@ -1,0 +1,79 @@
+body{
+    color: black;
+    font-size: 4;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(230, 229, 229);
+}
+
+h1{
+    position: relative;
+    left: 650px;
+    color: dodgerblue;
+}
+
+.leaveForm{
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    border-radius: 20px;
+    border: 2px solid;
+    margin-left: 500px;
+}
+
+input{
+    margin: 10px;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    padding: 20px;
+    text-align: center;
+    background-color: dodgerblue;
+    color: white;
+    border: 2px solid black;
+}
+
+td{
+    padding: 20px;
+    text-align: center;
+    border: 2px solid black;
+}
+button{
+    display: inline-block;
+    padding: 5px 20px;
+    margin-right: 15px;
+    border-radius: 15px;
+    border: 0;
+    text-decoration: none;
+    background-color: DodgerBlue;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    transition: all 0.2s;
+    color: white;
+    }
+    
+button:hover {
+        background-color: rgb(73, 73, 137);
+        cursor: pointer;
+    }
+    
+    @media all and (max-width:30em) {
+        a.button1 {
+            display: block;
+            margin: 0.4em auto;
+        }
+    }
+
+#applyLeave{
+    margin-top: 50px;
+    margin-left: 650px;
+    font-size: 1.5rem;
+    padding: 15px 20px;
+}
